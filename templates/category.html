@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Категория {{cnm}}{% endblock %}
+{% block hd %}Категория {{cnm}}{% endblock %}
+{% block content %}
+{% if cuid!=None %}<a href="{{url_for('write_article',cid=cid)}}">Написать статью</a>{% endif %}
+<!--Если пользователь авторизован, он может написать статью-->
+<h2>{% if ars %}Список статей в категории {{cnm}}:{% else %}В категории {{cnm}} ещё не написано ни одной статьи{% endif %}</h2>
+<ol>{% for id,h in ars %}<a href="{{url_for('article',id=id)}}"><li>{{ h }}</li></a>{% endfor %}</ol>
+{% endblock %}

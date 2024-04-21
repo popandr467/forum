@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}file upload test{% endblock %}
+{% block hd %}file upload test{% endblock %}
+{% block content %}
+<form id="myForm" method="post" enctype="multipart/form-data">
+	<button id="addFileBtn">Add File Input</button>
+	<input type="hidden" name="lst" id="flist">
+	<input type="file" id="fileInput" style="display: none;">
+	<div id="fcpct"></div>
+	<input type="submit" name="" id="smbt">
+</form>
+<script src="{{url_for('stat',file='file_upload.js')}}"></script>
+<form id="fileContent" method="post" action="#"></form>
+{% endblock %}

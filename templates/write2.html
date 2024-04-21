@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Добавить статью{% endblock %}
+{% block hd %}Добавить статью{% endblock %}
+{% block content %}
+<form method="POST" id="myForm">
+Заголовок:<br>
+<input type="text" id="ttl" name="title" required placeholder="Заголовок">
+<br><br>
+Текст:<br>
+<textarea id="txt" name="content" required placeholder="Текст" style="min-width:400px;min-height:122px;"></textarea><br><br>
+<input type="file" id="fileInput" style="display: none;">
+
+
+<div class="files">
+<div id="fcpct">
+<button id="addFileBtn">Add File Input</button>
+</div>
+<span class="mxsz">Макс. размер файла: 15МБ (файлы большего размера не сохраняются на сервере)</span>
+</div>
+
+
+<input type="submit" name="" id="smbt" value="Добавить">
+<br><br>
+
+</form>
+<form id="fileContent" method="post" action="#"></form>
+<script src="{{url_for('stat',file='file_upload.js')}}"></script>
+{% endblock %}

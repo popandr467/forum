@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{name}}{% endblock %}
+{% block hd %}{% if owner==cuid %}Ваш профиль{% else %}Профиль{% endif %}{% endblock %}
+
+{% block content %}
+<h2>{{name}}</h2>
+{% if ars %}
+<h2>{% if owner==cuid %}Список ваших статей{% else %}Список статей{% endif %}:</h2>
+<p>{% for id,h in ars %}<a href="{{url_for('article',id=id)}}">{{ h }}</a><br>{% endfor %}</p>
+{% else %}Пользователь ещё не написал ни одной статьи{% endif %}
+<br><br><br>
+{% if owner==cuid %}<a href="{{url_for('logout')}}"> Выйти</a>{% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="icon" href="{{url_for('stat',file='icon.png')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('stat',file='styles.css')}}">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<table id="ht"><tr>
+			<td><h1>{% block hd %}{% endblock %}</h1></td></tr>
+			<tr>
+			<td><div id="up">
+				<b><a href="{{url_for('profile')}}">{{nm}}</a></b>
+			</div></td></tr>
+		</tr></table>
+		</div>
+		<table id="links"><tr>
+			<td id="lnk"><a id="lnka" href="{{url_for('index')}}">Домашняя</a></td>
+			<td id="lnk"><a id="lnka" href="{{url_for('index')}}">Добавить статью</a></td>
+			<td id="lnk"><a id="lnka" href="{{url_for('author')}}">Об авторе</a>
+		</tr></table>
+		<div id="content">{% block content %}{% endblock %}
+		</div>
+		<div id="footer"><p>Со мной можно связаться через <a href="https://vk.com/popandr467">соцсеть</a>, <a href="mailto:popandr467@gmail.com">почту</a> и по <a href="tel:89181416173">телефону</a></p></div>
+	</div>
+</body>
+</html>

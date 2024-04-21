@@ -1,0 +1,135 @@
+#main{
+	margin:10px;
+	border:5px solid #000;
+	border-radius:10pt;
+}
+#header{
+	min-height:100px;
+	border-bottom:5px solid #000;
+	border-top-right-radius: 7pt;
+	border-top-left-radius: 7pt;
+}
+#ht{
+	text-align: center;
+	width: 100%;
+}
+#up{
+	width: calc(100% - 20px);
+	text-align: right;
+	position: relative;
+	bottom: 3px;
+	//background-color: #000;
+}
+#up a{color: #000;}
+#links{
+	width:100%;
+	border:0px solid #fff;
+	text-align:center;
+	//font-size:14pt;
+	background:#090;
+}
+#lnk{}
+#lnk:hover{background:#060;}
+#content{
+	min-height:500px;
+	align-items:flex-end;
+	padding:20px;
+}
+#footer{
+	min-height:25px;
+	clear:both;
+	//padding:3px;
+	border-top:5px solid #000;
+	border-bottom-left-radius:7pt;
+	border-bottom-right-radius:7pt;
+	//font-size:14pt;
+}
+#content{background:#222;color:#fff;}
+#header,#footer{
+	background:#af4;
+	align-items:center;
+}
+form,.ct{
+	border-radius:5pt;
+	padding:2pt 5pt 3pt;
+	border:2pt solid #fff;
+	width:100%;
+}
+#footer a{color:#000;}
+form{background:#099;}
+#content a:not(.files a),#links a{
+	color:#fff;
+	text-decoration-color:#fff;
+}
+.comment {
+  margin: 3pt 5pt 0;
+  border: 2mm solid #570;
+  border-radius: 15pt;
+  //margin: 5px;
+}
+.author {
+  font-size: 18px;
+  background-color: #00f;
+  padding: 5pt 5pt 0;
+  border-top-left-radius: 10pt;
+  border-top-right-radius: 10pt;
+}
+.date {
+  font-size: 10px;
+  text-align: right;
+}
+.comment-text {
+  font-size: 12px;
+  background-color: #04f;
+  border-bottom-left-radius: 10pt;
+  border-bottom-right-radius: 10pt;
+  padding: 5pt;
+}
+@media screen{
+	#links{font-size: 14pt;}
+	#footer{font-size: 14pt;}
+}
+@media handheld{
+	#links{font-size: 40pt;}
+	#footer{font-size: 40pt;}
+	/*#main{font-size: 40pt !important;}*/
+}
+
+
+.files{
+	border-radius:5pt;
+	padding:10px 5pt 10px;
+	border:2pt solid #fff;
+	//width:100%;
+	background:#590;
+	//padding-top: 10px;
+}
+
+.file{
+	border:1px solid #ccc;
+	border-radius:5px;
+	background-color:#fff;
+	padding:10px;
+}
+div.file{margin-bottom:10px;}
+span.file{margin-top:10px;}
+.filecont{margin-top:10px;}
+#deleteBtn{
+	background-color:#f00;
+	color:#fff;
+	border:none;
+	border-radius:5px;
+	padding:5px 10px;
+	margin:5px;
+}
+#fileContent{display: none;}
+#smbt{margin-top: 10px;}
+.mxsz{
+	font-size: 7pt;
+	color:#cccc;
+	font-style: italic;
+}
+.err{
+	color:#f00f;
+	font-style: italic;
+}

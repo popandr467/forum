@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Домашняя страница{% endblock %}
+{% block hd %}Домашняя страница{% endblock %}
+{% block content %}
+<h2>Список сушествующих категорий:</h2>
+<ul>
+{% for id,h in ars %}<a href="{{url_for('category',cid=id)}}"><li>{{ h }}</li></a>{% endfor %}
+</ul>
+{% endblock %}

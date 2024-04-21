@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Авторизация{% endblock %}
+{% block hd %}Авторизация{% endblock %}
+{% block content %}
+<form method="POST" action="{{ url_for('login') }}">
+Имя пользователя:<br>
+<input type="text" id="un" name="un" required placeholder="Username">
+<br><br>
+Пароль:<br>
+<input type="password" id="pw" name="pw" required placeholder="Password"></input><br>
+<input type="submit" value="Войти">
+</form>
+<br><br>
+Нет аккаунта? <a href="{{url_for('register')}}">Зарегистрироваться</a>
+{% endblock %}

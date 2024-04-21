@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block hd %}{{ title }}{% endblock %}
+{% block content %}
+{% for s in article %}{{ s }}<br>{% endfor %}<br>
+<br>
+
+
+{%if fs%}
+<div class="files">
+{% for id,nm in fs %}
+<a href="{{url_for('get_file',fid=id)}}"><div class="file">
+{{nm}}<br>
+</div></a>
+{% endfor %}
+</div><br>
+{% endif %}
+
+
+<span class="date">{% if cuid==owner %}<a href="{{url_for('delart',id=id)}}" style="color:#fff">delete</a>
+{%else%}<a href="{{url_for('profile',uid=owner)}}" style="color:#fff">Автор статьи</a>
+{% endif %}</span>
+
+
+{%if cuid!=None%}<form method="POST" action="{{url_for('article',id=id)}}">
+Написать комментарий<br>
+<textarea id="txt" name="txt" required placeholder="Текст" style="min-width:400px;min-height:30px;"></textarea><br>
+<input type="submit" value="Отправить">
+</form>{%endif%}
+
+
+
+<div class="comments">
+{% for c in cs %}
+<div class="comment">
+    <div class="author">
+      <a href="{{url_for('profile',uid=c[0])}}">{{ c[4] }}</a>
+      <span class="date">{{ c[2] }}</span>
+      {% if cuid==c[0] %}<span class="date"><a href="{{url_for('delcom',aid=id,cmid=c[3])}}" style="color:#fff">delete</a></span>{% endif %}
+    </div>
+    <div class="comment-text">
+      {% for s in c[1].split('\n') %}{{ s }}<br>{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
